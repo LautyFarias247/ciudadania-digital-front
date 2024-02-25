@@ -57,7 +57,7 @@ export default function SalesList({ tab,setTab }) {
 							})}
 						</div>
 					</div>
-					<button style={{ position: "absolute",right: "1rem" }} onClick={onCreate} className={style.createButton}>Crear</button>
+					<button style={{ position: "fixed",right: "1rem",bottom: 0 }} onClick={onCreate} className={style.createButton}>Crear</button>
 				</div>
 				:
 				<div className={style.listActionsLg}>

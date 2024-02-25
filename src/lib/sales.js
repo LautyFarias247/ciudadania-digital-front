@@ -9,8 +9,8 @@ export const fetchSales = async () => {
 
         return data.data;
     } catch (error) {
-        console.log(error);
-        return { ventas: [], estadosVentas: [], ventasTotales: [{ conteo: 0 }] };
+        const response = { ventas: [], estadosVentas: [], ventasTotales: [{ conteo: 0 }] };
+        return response;
     }
 };
 
