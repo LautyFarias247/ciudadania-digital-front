@@ -5,10 +5,10 @@ const URL = `${API}/${SALES}`;
 
 export const fetchSales = async () => {
     try {
-        const { data } = await axios.get(URL);
+        const response = await axios.get(URL);
         console.log('TRY');
-        console.log(data);
-        return data.data;
+        console.log(response);
+        return response.data;
     } catch (error) {
         console.log('CATCH');
         const response = { ventas: [], estadosVentas: [], ventasTotales: [{ conteo: 0 }] };
