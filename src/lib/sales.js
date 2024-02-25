@@ -6,6 +6,7 @@ const URL = `${API}/${SALES}`;
 export const fetchSales = async () => {
     try {
         const response = await axios.get(URL);
+        console.log(URL);
         console.log('TRY');
         console.log(response);
         return response.data;
