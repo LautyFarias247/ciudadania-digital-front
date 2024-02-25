@@ -7,6 +7,7 @@ export const fetchSales = async () => {
     try {
         const { data } = await axios.get(URL);
         console.log('TRY');
+        console.log(data);
         return data.data;
     } catch (error) {
         console.log('CATCH');
