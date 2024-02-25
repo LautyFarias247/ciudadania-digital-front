@@ -3,9 +3,9 @@ import style from './CreateProduct.module.css'
 import { createProduct,editProduct } from '../../lib/products'
 
 export default function CreateProduct({ existProduct,closeModal,refetch }) {
-	const [product,setProduct] = useState(existProduct.id ? existProduct : { name: "",description: "",price: null,quantity: null })
+	const [product,setProduct] = useState(existProduct.id ? existProduct : { nombre: "",descripcion: "",precio: null,cantidad: null })
 
-	const canSave = !!product.name && !!product.price && !!product.quantity
+	const canSave = !!product.nombre && !!product.precio && !!product.cantidad
 
 	const handleCreate = async (e) => {
 		try {
@@ -52,25 +52,25 @@ export default function CreateProduct({ existProduct,closeModal,refetch }) {
 					<label htmlFor="">
 						Nombre
 					</label>
-					<input type="text" value={product.name} name='name' onChange={onChange} />
+					<input type="text" value={product.nombre} name='nombre' onChange={onChange} />
 				</div>
 				<div className={style.field}>
 					<label htmlFor="">
 						Descripción
 					</label>
-					<textarea type="text" value={product.description} name="description" onChange={onChange} />
+					<textarea type="text" value={product.descripcion} name="descripcion" onChange={onChange} />
 				</div>
 				<div className={style.field}>
 					<label htmlFor="">
 						Precio
 					</label>
-					<input type="number" value={product.price} name="price" onChange={onChange} />
+					<input type="number" value={product.precio} name="precio" onChange={onChange} />
 				</div>
 				<div className={style.field}>
 					<label htmlFor="">
 						Cantidad
 					</label>
-					<input type="number" value={product.quantity} name="quantity" onChange={onChange} />
+					<input type="number" value={product.cantidad} name="cantidad" onChange={onChange} />
 				</div>
 				<div className={style.buttonContainer}>
 					<button type='button' onClick={closeModal} className={style.actionButton} style={{ backgroundColor: "#ff2929" }}>Cancelar</button>

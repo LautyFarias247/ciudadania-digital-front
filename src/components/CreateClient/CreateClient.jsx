@@ -4,14 +4,14 @@ import { createClient,editClient } from '../../lib/clients'
 // import { CreateClient,editProduct } from '../../lib/products'
 
 export default function CreateClient({ existClient,closeModal,refetch }) {
-	const [client,setClient] = useState(existClient.id ? existClient : { name: "",email: "",address: "" })
+	const [client,setClient] = useState(existClient.id ? existClient : { nombre: "",email: "",direccion: "" })
 
-	const canSave = !!client.name && !!client.email && !!client.address
+	const canSave = !!client.nombre && !!client.email && !!client.direccion
 
 	const handleCreate = async (e) => {
 		try {
 			e.preventDefault()
-			const { data,error,message } = await createClient(client)
+			const { error,message } = await createClient(client)
 
 			if (error) throw new Error(message)
 			alert("Cliente creado!")
@@ -49,7 +49,7 @@ export default function CreateClient({ existClient,closeModal,refetch }) {
 					<label htmlFor="">
 						Nombre
 					</label>
-					<input type="text" value={client.name} name='name' onChange={onChange} />
+					<input type="text" value={client.nombre} name='nombre' onChange={onChange} />
 				</div>
 				<div className={style.field}>
 					<label htmlFor="">
@@ -61,7 +61,7 @@ export default function CreateClient({ existClient,closeModal,refetch }) {
 					<label htmlFor="">
 						Dirección
 					</label>
-					<input type="text" value={client.address} name="address" onChange={onChange} />
+					<input type="text" value={client.direccion} name="direccion" onChange={onChange} />
 				</div>
 				<div className={style.buttonContainer}>
 					<button type='button' onClick={closeModal} className={style.actionButton} style={{ backgroundColor: "#ff2929" }}>Cancelar</button>

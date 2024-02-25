@@ -79,9 +79,9 @@ export default function ProductList({ tab,setTab }) {
 			elements={products}
 			List={({ item }) => <li className={style.listItem}>
 				<div className={style.listItemData}>
-					<span className={style.listItemTitle}>{item.name}</span>
-					<span>{`Precio: $${item.price}`}</span>
-					<span>{`Cantidad: ${item.quantity}`}</span>
+					<span className={style.listItemTitle}>{item.nombre}</span>
+					<span>{`Precio: $${item.precio}`}</span>
+					<span>{`Cantidad: ${item.cantidad}`}</span>
 				</div>
 				<div className={style.listItemActions}>
 					<button
@@ -99,10 +99,10 @@ export default function ProductList({ tab,setTab }) {
 			TableHead={["Nombre","Descripción","Precio","Cantidad","Acciones"]}
 			TableRow={({ item }) =>
 				<tr>
-					<td>{item.name}</td>
-					<td style={{ whiteSpace: 'pre-wrap',wordWrap: 'break-word' }}>{item.description || "-"}</td>
-					<td>$ {item.price}</td>
-					<td>{item.quantity}</td>
+					<td>{item.nombre}</td>
+					<td style={{ whiteSpace: 'pre-wrap',wordWrap: 'break-word' }}>{item.descripcion || "-"}</td>
+					<td>$ {item.precio}</td>
+					<td>{item.cantidad}</td>
 					<td style={{ textAlign: "right" }}>
 						<div>
 

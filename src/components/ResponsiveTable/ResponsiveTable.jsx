@@ -8,7 +8,6 @@ export default function ResponsiveTable({ elements,List,TableHead,TableRow,loadi
 
 	return <section className={style.mainContainer}>
 
-
 		{isSmallScreen
 			? <div className={style.tableSm}>
 				{loading

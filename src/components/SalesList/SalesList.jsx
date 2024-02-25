@@ -77,7 +77,7 @@ export default function SalesList({ tab,setTab }) {
 			elements={sales}
 			List={({ item }) => <li className={style.listItem}>
 				<div className={style.listItemData}>
-					<span className={style.listItemTitle}>{`Cliente: ${item.client_name}`}</span>
+					<span className={style.listItemTitle}>{`Cliente: ${item.nombre_cliente}`}</span>
 					<span>{`Monto total: $${item.monto_total}`}</span>
 					<span>{`Fecha: ${getDate(item.fecha)}`}</span>
 					<span>{`Estado: ${item.estado}`}</span>
@@ -86,7 +86,7 @@ export default function SalesList({ tab,setTab }) {
 			TableHead={["Cliente","Monto total","Fecha","Estado"]}
 			TableRow={({ item }) =>
 				<tr>
-					<td>{item.client_name}</td>
+					<td>{item.nombre_cliente}</td>
 					<td>{item.monto_total}</td>
 					<td>{getDate(item.fecha)}</td>
 					<td>{item.estado}</td>

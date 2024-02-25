@@ -68,9 +68,9 @@ export default function ClientList({ tab,setTab }) {
 			elements={clients}
 			List={({ item }) => <li className={style.listItem}>
 				<div className={style.listItemData}>
-					<span className={style.listItemTitle}>{item.name}</span>
+					<span className={style.listItemTitle}>{item.nombre}</span>
 					<span>{`Email: ${item.email}`}</span>
-					<span>{`Dirección: ${item.address}`}</span>
+					<span>{`Dirección: ${item.direccion}`}</span>
 				</div>
 				<div className={style.listItemActions}>
 					<button
@@ -88,9 +88,9 @@ export default function ClientList({ tab,setTab }) {
 			TableHead={["Nombre","Email","Dirección","Acciones"]}
 			TableRow={({ item }) =>
 				<tr>
-					<td>{item.name}</td>
+					<td>{item.nombre}</td>
 					<td>{item.email}</td>
-					<td>{item.address}</td>
+					<td>{item.direccion}</td>
 					<td style={{ textAlign: "right" }}>
 						<button onClick={() => onEdit(item)} className={style.listActionButton} style={{
 							backgroundColor: "#ffa71a",

@@ -27,8 +27,7 @@ const useProducts = () => {
         if (!value) return setProducts(savedProducts);
 
         const filteredProducts = savedProducts.filter((product) => {
-            console.log({ product, value });
-            return product.name.toLowerCase().includes(value) || product.description.toLowerCase().includes(value);
+            return product.nombre.toLowerCase().includes(value) || product.descripcion.toLowerCase().includes(value);
         });
         setProducts(filteredProducts);
     };

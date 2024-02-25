@@ -19,7 +19,7 @@ const useClients = () => {
         if (!value) return setClients(savedClients);
 
         const filteredClients = savedClients.filter(
-            (client) => client.name.toLowerCase().includes(value) || client.email.toLowerCase().includes(value)
+            (client) => client.nombre.toLowerCase().includes(value) || client.email.toLowerCase().includes(value)
         );
         setClients(filteredClients);
     };
