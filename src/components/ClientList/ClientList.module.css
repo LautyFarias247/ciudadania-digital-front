@@ -1,0 +1,113 @@
+.listItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.1rem 0 1rem;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.listItem:hover {
+    background-color: aliceblue;
+}
+
+.listItemData {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 360px) {
+    .listItemData {
+        width: 8rem;
+    }
+}
+.listItemTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+}
+
+.listItemActions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.listActionButton {
+    color: white;
+    padding: 0.4rem 1rem;
+    background-color: rgb(255, 185, 73);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.infoButton {
+    height: 3rem;
+    width: 5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    color: white;
+    margin-right: 0.3rem;
+    cursor: pointer;
+}
+
+.mainContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 576px) {
+    .mainContainer {
+        justify-content: center;
+        align-items: center;
+        padding: 0 5rem;
+    }
+}
+
+.tableContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.listActions {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgb(183, 183, 183);
+    border-top: 1px solid rgb(183, 183, 183);
+}
+.searchInput {
+    width: 100%;
+    height: 2rem;
+    padding: 0 0.4rem;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 0.2rem;
+}
+.createButton {
+    background-color: rgb(201, 106, 252);
+    color: white;
+    border-radius: 0.2rem;
+    margin: 0.4rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    width: 6.4rem;
+    cursor: pointer;
+}

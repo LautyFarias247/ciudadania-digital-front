@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import ProductList from './components/ProductList/ProductList';
+import SalesList from './components/SalesList/SalesList';
+import ClientList from './components/ClientList/ClientList';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [tab, setTab] = useState('Productos');
+    return (
+        <div className="App">
+            {tab === 'Productos' && <ProductList tab={tab} setTab={setTab} />}
+            {tab === 'Clientes' && <ClientList tab={tab} setTab={setTab} />}
+            {tab === 'Ventas' && <SalesList tab={tab} setTab={setTab} />}
+        </div>
+    );
 }
 
 export default App;
