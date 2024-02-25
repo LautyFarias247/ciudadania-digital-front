@@ -13,6 +13,15 @@ export const fetchSales = async () => {
     }
 };
 
+export const fetchClientSales = async (email, monto) => {
+    try {
+        const response = await axios.get(`${URL}/${email}/${monto}`);
+        return response.data.data;
+    } catch (error) {
+        return [];
+    }
+};
+
 export const createSale = async (sale) => {
     try {
         const { data } = await axios.post(URL, sale);

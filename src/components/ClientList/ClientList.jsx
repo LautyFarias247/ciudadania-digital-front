@@ -5,12 +5,14 @@ import DeleteModal from "../DeleteModal/DeleteModal";
 import useClients from "../../hooks/useClients";
 import CreateClient from '../CreateClient/CreateClient';
 import { deleteClient } from '../../lib/clients';
+import SearchSales from "../SearchSales/SearchSales";
 
 export default function ClientList({ tab,setTab }) {
 	const { clients,loading,refetch,onSearch } = useClients()
 
 	const [showDeleteModal,setShowDeleteModal] = useState(null)
 	const [showCreateModal,setShowCreateModal] = useState(false)
+	const [showSearchSales,setShowSearchSales] = useState(false)
 
 	const [searchValue,setSearchValue] = useState("")
 
@@ -46,13 +48,18 @@ export default function ClientList({ tab,setTab }) {
 	const onCancel = () => {
 		setShowDeleteModal(null)
 		setShowCreateModal(null)
+		setShowSearchSales(null)
 	}
 
+	const onSearchSales = () => {
+		setShowSearchSales(true)
+	}
 
 
 	return <main className={style.mainContainer}>
 		{!!showCreateModal && <CreateClient existClient={showCreateModal} closeModal={onCancel} refetch={refetch} />}
 		{!!showDeleteModal && <DeleteModal closeModal={onCancel} handleDelete={handleDelete} />}
+		{!!showSearchSales && <SearchSales closeModal={onCancel} clients={clients} />}
 		<div className={style.buttonContainer}>
 			<button style={{ backgroundColor: tab === "Productos" ? "#4d4dff" : "#6b6bff" }} onClick={() => setTab("Productos")} className={style.infoButton}>Productos</button>
 			<button style={{ backgroundColor: tab === "Clientes" ? "#4d4dff" : "#6b6bff" }} onClick={() => setTab("Clientes")} className={style.infoButton}>Clientes</button>
@@ -60,6 +67,7 @@ export default function ClientList({ tab,setTab }) {
 		</div>
 		<div className={style.listActions}>
 			<input className={style.searchInput} value={searchValue} placeholder='Buscar...' onChange={(e) => handleSearch(e.target.value)} />
+			<button onClick={onSearchSales} className={style.createButton}>Buscar Ventas</button>
 			<button onClick={onCreate} className={style.createButton}>Crear</button>
 		</div>
 
