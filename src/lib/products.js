@@ -9,7 +9,7 @@ export const fetchProducts = async () => {
 
         const { data } = d;
 
-        console.log(data);
+        console.log(URL);
 
         return data;
     } catch (error) {

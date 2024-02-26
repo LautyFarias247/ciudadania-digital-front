@@ -1,4 +1,4 @@
-export const API = process.env.REACT_APP_API_DOMAIN;
+export const API = 'https://cuidadania-digital-api.vercel.app';
 
 export const PRODUCTS = 'products';
 
